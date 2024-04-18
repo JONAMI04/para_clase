@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+///#include <string.h>
+///#include <stdlib.h>
 ///void cambio(int *a,int *b);
 ///int suma(int *a, int *b);
 ///int prod(int *a, int *b);
@@ -10,7 +10,9 @@
 ///void mayusprimera(char *pcad);
 ///void darvueltacad(char *p, char *p2);
 ///int comprarcadena(char *p,char *p2);
-void copiarcadena(char *p,char *p2);
+int contarcadena(const char p_tex);
+///void unioncadena(char *p_tex1,char *p_tex2,char *p_dest);
+
 int main() {
     /*pto 1
     un puntero es una variable que guarda una direccion de memoria */
@@ -127,23 +129,123 @@ int main() {
     }else{
         printf("son diferentes\n");
     }*/
-    char cad1[]={"esta es la cadena"};
-    char *p = &cad1;
-    char *p2 =NULL;
-    int a = 18;
-    printf("%d",a);
-    p2 = malloc(18*sizeof(char));
-    copiarcadena(p,p2);
-    printf("%s\n",p);
+    /*pto 16
+    char texto1[20],texto2[20];
+    char *p1 = (char *) &texto1, *p2 = texto2, *p3 = NULL;
+    printf("ingrese el 1er texto\n");
+    fflush(stdin);
+    gets(texto1);
+    printf("ingrese el 2do texto\n");
+    fflush(stdin);
+    gets(texto2);
+    unioncadena(p1,p2,p3);
+    printf("%s \n %s \n %s \n",p1,p2,p3);*/
+    /*pto 17
+    int *p_conA=NULL, *p_conB=NULL;
+    int conja=0;
+    int conjb=0;
+    printf("Ingrese el tama de 1er conjunto\n");
+    scanf("%d",&conja);
+    printf("Ingrese el tama de 2do conjunto\n");
+    scanf("%d",&conjb);
+    p_conA= malloc(conja* sizeof(int));
+    p_conB= malloc(conjb* sizeof(int));
+    for (int i = 0; i < conja; i++) {
+        printf("Ingrese el valor %d en el conjunto A\n",i+1);
+        scanf("%d",&p_conA[i]);
+    }
+    for (int i = 0; i < conjb; i++) {
+        printf("Ingrese el valor %d en el conjunto B\n",i+1);
+        scanf("%d",&p_conB[i]);
+    }
+    for (int i = 0; i < conja; i++) {
+        for (int j = 0; j < conjb; j++) {
+            if(p_conA[i]==p_conB[j]){
+                printf("%d esta en la interseccion\n",p_conA[i]);
+            }
+        }
+    }*/
+    /*pto 18
+    char cad1[20],compara,remplazo;
+    char *p1=NULL, *p=&cad1;
+    printf("ingrese la cadena\n");
+    fflush(stdin);
+    gets(cad1);
+    fflush(stdin);
+    printf("ingrese el valor de busqueda\n");
+    scanf("%c",&compara);
+    fflush(stdin);
+    printf("ingrese el valor de remplazo\n");
+    scanf("%c",&remplazo);
+    p1= malloc((contarcadena(p)+1)*sizeof(char));
+    for(int i = 0; cad1!='\0';i++){
+        if(cad1[i]==compara){
+            p[i]=compara;
+        }
+        else{
+            p[i]=cad1[i];
+        }
+    }
+    printf("%s\n",cad1);*/
+    /*pto 19
+     * igual al 5*/
+    /*pto 20*/
+    int fichero[5][4]={1,2,3,4,5,6,7,8,9,10
+    ,11,12,13,14,15,16,17,18,19,20,};
+    int busca, cod;
+    for(int i = 0;i<5;i++){
+        for(int j=0;j<4;j++){
+            printf("ingrese el codigo\t");
+            cod= scanf("%d",&cod);
+            fichero[i][j]= cod;
+            printf("%d",fichero[i][j]);
+        }
+        printf("\n");
+    }
+    printf("ingrese el codigo a buscar\n");
+    for (int i=0; i < 5;i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d",fichero[i][j]);
+            }
+    }
+    scanf("%d",&busca);
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            if(busca==fichero[i][j]){
+                printf("el fichero esta en el lugar %d columna %d",i,j);
+            }
+        }
+    }
+    printf("\n");
     return 0;
 }
-void copiarcadena(char *p,char *p2){
-    for(int i=0;*(p+i)!='\0';i++){
-        printf("%c\t",*(p+i));
-        printf("%c\t",*(p2+i));
-        p2[i] = *(p+i);
+/*void unioncadena(char *p_tex1,char *p_tex2,char *p_dest){
+    int t_tex1= contarcadena(p_tex1);
+    int tamano = (t_tex1 + contarcadena(p_tex2))+2;
+    p_dest = malloc(sizeof(char)*tamano);
+    printf("%s\t",p_dest);
+    for (int i = 0; *(p_tex1+i)!='\0'; i++) {
+        *(p_dest+i)=*(p_tex1+i);
+        printf("%c\t",*(p_dest+i));
     }
-}
+    for (int i = 0; *(p_tex2+i)!='\0'; i++) {
+        *(p_dest+t_tex1)=*(p_tex2+i);
+        printf("%c\t",*(p_dest+t_tex1));
+        t_tex1++;
+        *(p_dest+t_tex1)='\0';
+    }
+    printf("%s\t",p_dest);
+
+    printf("%d\t",tamano);
+
+}*/
+/*int contarcadena(const char *p_tex){
+    int cont=0;
+    for (int i=0;*(p_tex+i)!='\0';i++){
+        cont++;
+    }
+    return cont;
+}*/
 /*int comprarcadena(char *p,char *p2){
     for(int i=0;*(p+i)!='\0';i++){
         if(*(p+i)!=*(p2+i)){

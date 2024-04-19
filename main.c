@@ -1,18 +1,7 @@
 #include <stdio.h>
 ///#include <string.h>
 ///#include <stdlib.h>
-///void cambio(int *a,int *b);
-///int suma(int *a, int *b);
-///int prod(int *a, int *b);
-///void cubo(int *a, int *b);
-///void lonicad(int *a, char *b);
-///void mayus(char *cad);
-///void mayusprimera(char *pcad);
-///void darvueltacad(char *p, char *p2);
-///int comprarcadena(char *p,char *p2);
-int contarcadena(const char p_tex);
-///void unioncadena(char *p_tex1,char *p_tex2,char *p_dest);
-
+///#include "mia.h"
 int main() {
     /*pto 1
     un puntero es una variable que guarda una direccion de memoria */
@@ -189,14 +178,14 @@ int main() {
     printf("%s\n",cad1);*/
     /*pto 19
      * igual al 5*/
-    /*pto 20*/
+    /*pto 20
     int fichero[5][4]={1,2,3,4,5,6,7,8,9,10
     ,11,12,13,14,15,16,17,18,19,20,};
     int busca, cod;
     for(int i = 0;i<5;i++){
         for(int j=0;j<4;j++){
             printf("ingrese el codigo\t");
-            cod= scanf("%d",&cod);
+            scanf("%d",&cod);
             fichero[i][j]= cod;
             printf("%d",fichero[i][j]);
         }
@@ -215,85 +204,7 @@ int main() {
                 printf("el fichero esta en el lugar %d columna %d",i,j);
             }
         }
-    }
+    }*/
     printf("\n");
     return 0;
 }
-/*void unioncadena(char *p_tex1,char *p_tex2,char *p_dest){
-    int t_tex1= contarcadena(p_tex1);
-    int tamano = (t_tex1 + contarcadena(p_tex2))+2;
-    p_dest = malloc(sizeof(char)*tamano);
-    printf("%s\t",p_dest);
-    for (int i = 0; *(p_tex1+i)!='\0'; i++) {
-        *(p_dest+i)=*(p_tex1+i);
-        printf("%c\t",*(p_dest+i));
-    }
-    for (int i = 0; *(p_tex2+i)!='\0'; i++) {
-        *(p_dest+t_tex1)=*(p_tex2+i);
-        printf("%c\t",*(p_dest+t_tex1));
-        t_tex1++;
-        *(p_dest+t_tex1)='\0';
-    }
-    printf("%s\t",p_dest);
-
-    printf("%d\t",tamano);
-
-}*/
-/*int contarcadena(const char *p_tex){
-    int cont=0;
-    for (int i=0;*(p_tex+i)!='\0';i++){
-        cont++;
-    }
-    return cont;
-}*/
-/*int comprarcadena(char *p,char *p2){
-    for(int i=0;*(p+i)!='\0';i++){
-        if(*(p+i)!=*(p2+i)){
-            return 1;
-        }
-    }
-    return 0;
-}*/
-/*void darvueltacad(char *p, char *p2){
-    int j = 0;
-    for (int i = strlen(p);i>=0;i--){
-        if(*(p2+i)!='\0'){
-            *(p2+j)=*(p+i);
-            j++;
-        }
-    }
-}*/
-/*void mayusprimera(char *pcad){
-    for (int i=0; *(pcad+i) != '\0';i++){
-        if (*(pcad+i)!=' ' && *(pcad+i-1)!=' ' && i!=0){
-        *(pcad+i)=*(pcad+i)-32;
-        printf("%c\n",*(pcad+i));
-        }
-    }
-}*/
-/*void mayus(char *cad){
-    for (int i=0; *(cad+i) != '\0';i++){
-        if (*(cad+i)!=' '){
-        printf("%c\n",*(cad+i));
-        *(cad+i)=*(cad+i)-32;}
-    }
-}*/
-/*void lonicad(int *a,char *b){
-    *a= strlen(b);
-}*/
-/*void cubo(int *a, int *b){
-    *b=*a * *a * *a;
-}*/
-/*void cambio(int *a,int *b){
-    int c=*a;
-    *a=*b;
-    *b=c;
-}*/
-/*int suma(int *a, int *b){
-    int sum=*a + *b;
-    return sum;
-}
-int prod(int *a, int *b){
-    int producto=*a * *b;
-    return producto;
-}*/

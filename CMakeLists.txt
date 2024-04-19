@@ -3,4 +3,6 @@ project(prueba C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(prueba main.c)
+add_executable(prueba main.c
+        mia.h
+        mia.c)
